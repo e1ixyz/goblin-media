@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goblin Media - Gallery</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="assets/js/transition.js"></script>
+    <script>
+        // Redirect Delay
+        $(document).ready(function() {
+        $('a').click(function(event) {
+          event.preventDefault();
+          var href = $(this).attr('href');
+          setTimeout(function() {
+            window.location.href = href;
+          }, 1000);
+        });
+      });
+
+      function openModal(imgSrc) {assets/img/gallery/media4.jpeg
+			document.getElementById("modal-img").src = imgSrc;
+			document.querySelector(".modal").style.display = "block";
+        }
+
+        function closeModal() {
+          document.querySelector(".modal").style.display = "none";
+        }
+    </script>
+<!--     <style>
+      body {
+        background-image: url('assets/img/b1.png');
+        background-repeat: repeat;
+        background-size: 20px 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+
+      }
+
+      .header {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+    </style> -->
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="main-content">
+        <div class="header" style="padding-top: 50px;">
+            <h1>[Gallery]</h1><br><br>
+            <!-- <img src="assets/img/header.png" style="width: 85%; max-width: 600px; object-fit: contain;"><br> -->
+
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media1.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media1.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media2.PNG" alt="Image 2" onclick="openModal('assets/img/gallery/media2.PNG')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media3.JPG" alt="Image 3" onclick="openModal('assets/img/gallery/media3.JPG')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media4.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media4.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media5.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media5.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media6.jpeg" alt="Image 2" onclick="openModal('assets/img/gallery/media6.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media7.jpeg" alt="Image 3" onclick="openModal('assets/img/gallery/media7.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media8.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media8.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media9.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media9.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media10.jpeg" alt="Image 2" onclick="openModal('assets/img/gallery/media10.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media11.jpeg" alt="Image 3" onclick="openModal('assets/img/gallery/media11.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media12.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media12.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media13.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media13.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media14.jpeg" alt="Image 2" onclick="openModal('assets/img/gallery/media14.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media15.jpeg" alt="Image 3" onclick="openModal('assets/img/gallery/media15.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media16.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media16.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media17.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media17.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media18.jpeg" alt="Image 2" onclick="openModal('assets/img/gallery/media18.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media19.jpeg" alt="Image 3" onclick="openModal('assets/img/gallery/media19.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media20.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media20.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media20.jpeg" alt="Image 1" onclick="openModal('assets/img/gallery/media20.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media22.jpg" alt="Image 2" onclick="openModal('assets/img/gallery/media22.jpg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media23.jpeg" alt="Image 3" onclick="openModal('assets/img/gallery/media23.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media24.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media24.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media25.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media25.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media26.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media26.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media27.PNG" alt="Image 4" onclick="openModal('assets/img/gallery/media27.png')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media28.jpeg" alt="Image 4" onclick="openModal('assets/img/gallery/media28.jpeg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media29.jpg" alt="Image 4" onclick="openModal('assets/img/gallery/media29.jpg')">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/img/gallery/media30.jpg" alt="Image 4" onclick="openModal('assets/img/gallery/media30.jpeg')">
+              </div>
+            </div>
+
+            <!-- close button -->
+            <div class="modal" onclick="closeModal()">
+              <span class="close-modal">&times;</span>
+              <div class="modal-content">
+                <img id="modal-img" src="">
+              </div>
+            </div>
+
+        </div><br><br>
+    <h1><a class="blink" href="home.html">[return]</a></h1> <br><br><br>
+</body>
+</html>
+;
+ 

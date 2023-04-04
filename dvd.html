@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>[]</title>
+<!--   <script>
+    alert("[Click the Goblin to return to home.]")
+  </script> -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    #dvd-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #dvd {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      width: 25%;
+      max-width: 250px;
+    }
+
+    #dvd-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 50;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: auto 100px;
+    }
+  </style>
+</head>
+<body>
+<div id="dvd-container">
+  <div id="dvd-overlay"></div>
+  <a href="home.html"><img id="dvd" src="assets/img/goblin.gif" alt="Goblin"></a>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  var dvd = $('#dvd');
+  var overlay = $('#dvd-overlay');
+  var x = 0;
+  var y = 0;
+  var dx = 2;
+  var dy = 2;
+  var width = $(window).width();
+  var height = $(window).height();
+  var bgImages = ['assets/img/b1.png', 'assets/img/b2.png', 'assets/img/b3.png'];
+  var curBgImageIndex = Math.floor(Math.random() * bgImages.length);
+
+  function moveDVD() {
+    x += dx;
+    y += dy;
+
+    if (x < 0 || x > width - dvd.width()) {
+      dx = -dx;
+      changeOverlayBackground();
+    }
+
+    if (y < 0 || y > height - dvd.height()) {
+      dy = -dy;
+      changeOverlayBackground();
+    }
+
+    dvd.css({left: x, top: y});
+
+    requestAnimationFrame(moveDVD);
+  }
+
+  function changeOverlayBackground() {
+    curBgImageIndex = (curBgImageIndex + 1) % bgImages.length;
+    var bgImage = 'url(' + bgImages[curBgImageIndex] + ')';
+    overlay.css('background-image', bgImage);
+
+    // generate a random color for the overlay
+    var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    overlay.css('background-color', randomColor);
+  }
+
+  $(document).ready(function() {
+    var bgImage = 'url(' + bgImages[curBgImageIndex] + ')';
+    overlay.css('background-image', bgImage);
+    moveDVD();
+  });
+
+  $(window).on('resize', function() {
+    width = $(window).width();
+    height = $(window).height();
+  });
+</script>
+</body>
+</html>
