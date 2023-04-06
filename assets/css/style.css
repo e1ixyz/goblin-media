@@ -111,6 +111,18 @@ h6 {
   font-size: 50px;
 }
 
+h4 {
+  border-radius: 25px;
+  text-align: center;
+  font-family: 'Codeink', sans-serif;
+  color: rgb(50, 169, 78);
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /* unvisited link */
 a:link {
   color: rgb(0, 0, 0);
