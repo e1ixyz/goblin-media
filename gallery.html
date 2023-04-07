@@ -6,44 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goblin Media - Gallery</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="assets/js/transition.js"></script>
     <script>
         // Redirect Delay
         $(document).ready(function() {
-        $('a').click(function(event) {
-          event.preventDefault();
-          var href = $(this).attr('href');
-          setTimeout(function() {
-            window.location.href = href;
-          }, 1000);
+            $('a').click(function(event) {
+                event.preventDefault();
+                var href = $(this).attr('href');
+                setTimeout(function() {
+                    window.location.href = href;
+                }, 1000);
+            });
         });
-      });
 
-      function openModal(imgSrc) {assets/img/gallery/media4.jpeg
-			document.getElementById("modal-img").src = imgSrc;
-			document.querySelector(".modal").style.display = "block";
+        function openModal(imgSrc) {
+            document.getElementById("modal-img").src = imgSrc;
+            document.querySelector(".modal").style.display = "block";
         }
 
         function closeModal() {
-          document.querySelector(".modal").style.display = "none";
+            document.querySelector(".modal").style.display = "none";
         }
+        
     </script>
-<!--     <style>
-      body {
-        background-image: url('assets/img/b1.png');
-        background-repeat: repeat;
-        background-size: 20px 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-
-      }
-
-      .header {
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-    </style> -->
 </head>
 <body>
     <div class="custom-cursor"></div>
