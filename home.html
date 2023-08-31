@@ -30,6 +30,14 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const shopButton = document.getElementById('gallery-button');
+
+        shopButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('The gallery page is under development. Check back soon!');
+        });
+    });
 
     </script>
 </head>
@@ -38,7 +46,7 @@
     <div class="main-content">
     <div class="header" style="padding-top: 15px;">
         <img src="assets/img/header.png" style="width: 85%; min-width: 400px; max-width: 600px; object-fit: contain;"><br>
-        <a href="gallery.html">
+        <a href="#" id="gallery-button">
             <div class="button">
                 <div class="img-container">
                     <img src="assets/img/b1.png" style="width: 100px;" alt="Button 1">
