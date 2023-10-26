@@ -1,2 +1,1 @@
-# jake-website
 # goblin-media

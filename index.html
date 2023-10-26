@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"> -->
     <title>Goblin Media</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
     <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<!--     <script src="assets/js/randomizer.js"></script> -->
     <script>
         // Preloader
         document.addEventListener("DOMContentLoaded", function() {
@@ -21,6 +19,26 @@
             mainContent.classList.add("visible");
         }, 4800);
         });
+
+                // Redirect Delay
+                $(document).ready(function() {
+        $('a').click(function(event) {
+          event.preventDefault();
+          var href = $(this).attr('href');
+          setTimeout(function() {
+            window.location.href = href;
+          }, 500);
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const shopButton = document.getElementById('shop-button');
+
+        shopButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('The shop page is under development. Check back soon!');
+        });
+    });
     </script>
 
 </head>
@@ -30,30 +48,47 @@
       </div>
     <div id="main-content">  
     <div class="custom-cursor"></div>
-<!--     <div class="wrapper"> -->
-        <div class="header">
-            <img src="assets/img/header.png" style="width: 100%; max-width: 900px; min-width: 400px; object-fit: contain;" ><br>
-            <h1><a class="blink" href="home.html">[click to enter]</a></h1>
 
-<!--             <a href="index"><img class="menubutton" src="assets/img/home.png"></a>
-            <a href="gallery"><img class="menubutton" src="assets/img/gallery.png"></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.depop.com/issybdesigns/"><img class="menubutton" src="assets/img/shop.png"></a>
-            <a href="about"><img class="menubutton" src="assets/img/about.png"></a> -->
-
-<!--     </div> -->
-<!--         <div class="container">
-            <img src="assets/img/randomimg/1.png" class="randomimg">
-            <img src="assets/img/randomimg/2.png" class="randomimg">
-            <img src="assets/img/randomimg/3.png" class="randomimg">
-            <img src="assets/img/randomimg/4.png" class="randomimg">
-            <img src="assets/img/randomimg/5.png" class="randomimg">
-            <img src="assets/img/randomimg/6.png" class="randomimg">
-            <img src="assets/img/randomimg/7.png" class="randomimg">
-            <img src="assets/img/randomimg/8.png" class="randomimg">
-            <img src="assets/img/randomimg/9.png" class="randomimg">
-            <img src="assets/img/randomimg/10.png" class="randomimg">
-
-
-        </div> -->
+            <div class="custom-cursor"></div>
+            <div class="main-content">
+            <div class="header" style="padding-top: 15px;">
+                <img src="assets/img/header.png" style="width: 85%; min-width: 400px; max-width: 600px; object-fit: contain;"><br>
+                <a href="gallery.html" id="gallery-button">
+                    <div class="button">
+                        <div class="img-container">
+                            <img src="assets/img/b1.png" style="width: 100px;" alt="Button 1">
+                            <img src="assets/img/b1.gif" style="width: 100px;" alt="Button 1 GIF" class="gif">
+                        </div>
+                        <div class="text-container">
+                            <h1>[gallery]</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="about.html">
+                    <div class="button">
+                        <div class="img-container">
+                            <img src="assets/img/b2.png" style="width: 100px;" alt="Button 2">
+                            <img src="assets/img/b2.gif" style="width: 100px;" alt="Button 2 GIF" class="gif">
+                        </div>
+                        <div class="text-container">
+                            <h1>[about]</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" id="shop-button">
+                    <div class="button">
+                        <div class="img-container">
+                            <img src="assets/img/b3.png" style="width: 100px;" alt="Button 3">
+                            <img src="assets/img/b3.gif" style="width: 100px;" alt="Button 3 GIF" class="gif">
+                        </div>
+                        <div class="text-container">
+                            <h1>[shop]</h1>
+                        </div>
+                    </div>
+                </a>
+        <!--         <a href="dvd.html"><img src="assets/img/goblinhead.gif" style="width: 150px; top:0px; margin-top: -20px;"></a> -->
+                
+                <br><br>
+            </div><br>
 </body>
 </html>

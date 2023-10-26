@@ -51,10 +51,9 @@ body {
   background-color: rgb(252, 252, 225);
 }
 
-
-
 #main-content {
   bottom: 400px;
+  padding-top: 100px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 5.0s, visibility 5.0s;
@@ -113,18 +112,6 @@ h6 {
   font-size: 50px;
 }
 
-h4 {
-  border-radius: 25px;
-  text-align: center;
-  font-family: 'Codeink', sans-serif;
-  color: rgb(50, 169, 78);
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 /* unvisited link */
 a:link {
   color: rgb(0, 0, 0);
@@ -147,7 +134,7 @@ a:active {
 }
 
 a {
-  transition-delay: 1.5s;
+  transition-delay: 0s;
 }
 
 /* .random {
@@ -164,16 +151,30 @@ a {
   width: 100%;
 } 
 
-.header {
-  text-align: center;
-  background-color: rgb(252, 252, 225);
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.bio {
+  height: audo;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
+.header {
+  
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  position: relative;
+  background-color: rgb(252, 252, 225);
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
 
 
 /* .buttons {
@@ -268,6 +269,16 @@ a {
   object-fit: cover;
   cursor: pointer;
   border-radius: 15px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
 }
 .modal {
   display: none;
