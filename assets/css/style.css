@@ -152,13 +152,12 @@ a {
 } 
 
 .bio {
-  height: audo;
-  margin-left: 100px;
-  margin-right: 100px;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 25%;
 }
 
 .header {
-  
   margin: auto;
   display: block;
   margin-left: auto;
@@ -171,8 +170,6 @@ a {
   position: relative;
   background-color: rgb(252, 252, 225);
   height: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 
 }
 
@@ -257,6 +254,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .gallery-item {
   box-sizing: border-box;
