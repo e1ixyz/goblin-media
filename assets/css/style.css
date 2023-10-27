@@ -22,7 +22,7 @@ body {
 }
 
 .blink {
-  animation: blink-animation 1s steps(5, start) infinite;
+  animation: blink-animation .6s steps(5, start) infinite;
 }
 
 @keyframes blink-animation {
@@ -125,7 +125,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 255, 21);
 }
 
 /* selected link */
