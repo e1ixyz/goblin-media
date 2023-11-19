@@ -108,7 +108,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function updateAssignmentsFromSheet() {
-            const googleSheetsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQUWNMErA4UJ2XhQE0XwhlyhhYUVnfFlAxJo1RP0mzzBnc21LvWzr4qsmqVS7l2iO5XZTty4Px-_rvS/pub?output=csv';
+            const googleSheetsURL = 'YOUR_GOOGLE_SHEETS_CSV_URL';
     
             $.get(googleSheetsURL, function (data) {
                 const rows = data.split('\n');
@@ -116,18 +116,28 @@
     
                 for (let i = 1; i < rows.length; i++) {
                     const columns = rows[i].split(',');
-                    if (columns.length >= 3) {
-                        const assignmentLink = columns[1].trim(); // Get link from column B
-                        const assignmentDescription = columns[2].trim(); // Get assignment name from column C
+                    if (columns.length >= 4) {
+                        const timestamp = columns[0].trim(); // Column A - Timestamp
+                        const assignmentFile = columns[1].trim(); // Column B - Assignment File Upload
+                        const assignmentLink = columns[2].trim(); // Column C - Assignment Link Upload
+                        const assignmentName = columns[3].trim(); // Column D - Assignment Name
     
-                        // Create <h1> tag
-                        const assignmentTitle = $('<h1>').text(assignmentDescription);
+                        const formattedDate = new Date(timestamp).toLocaleDateString('en-US'); // Format timestamp as mm/dd/yyyy
     
-                        // Create <a> tag and append <h1> inside it
-                        const assignmentElement = $('<a>').attr('href', assignmentLink).addClass('assignment-link').append(assignmentTitle);
+                        let assignmentElement;
     
-                        const listItem = $('<li>').append(assignmentElement);
-                        assignmentsContainer.append(listItem);
+                        if (assignmentFile && !assignmentLink) {
+                            // If there's a file and no link provided
+                            assignmentElement = $('<a>').attr('href', assignmentFile).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`);
+                        } else if (!assignmentFile && assignmentLink) {
+                            // If there's a link and no file provided
+                            assignmentElement = $('<a>').attr('href', assignmentLink).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`);
+                        }
+    
+                        if (assignmentElement) {
+                            const listItem = $('<li>').append(assignmentElement);
+                            assignmentsContainer.append(listItem);
+                        }
                     }
                 }
             });
@@ -135,5 +145,6 @@
     
         updateAssignmentsFromSheet();
     </script>
+    
 </body>
 </html>
