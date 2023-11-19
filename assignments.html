@@ -108,7 +108,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function updateAssignmentsFromSheet() {
-            const googleSheetsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSeYei3K0DSNoF2JQKDkjr7-QmmWUtLAryMaDgl1QAB0NhuWlXW9WdwKyEYD9sYAupRZW14883DCtke/pub?output=csv';
+            const googleSheetsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQUWNMErA4UJ2XhQE0XwhlyhhYUVnfFlAxJo1RP0mzzBnc21LvWzr4qsmqVS7l2iO5XZTty4Px-_rvS/pub?output=csv';
     
             $.get(googleSheetsURL, function (data) {
                 const rows = data.split('\n');
