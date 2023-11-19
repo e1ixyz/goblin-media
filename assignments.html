@@ -109,11 +109,11 @@
     <script>
         function updateAssignmentsFromSheet() {
             const googleSheetsURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQUWNMErA4UJ2XhQE0XwhlyhhYUVnfFlAxJo1RP0mzzBnc21LvWzr4qsmqVS7l2iO5XZTty4Px-_rvS/pub?output=csv';
-    
+
             $.get(googleSheetsURL, function (data) {
                 const rows = data.split('\n');
                 const assignmentsContainer = $('.assignments ul');
-    
+
                 for (let i = 1; i < rows.length; i++) {
                     const columns = rows[i].split(',');
                     if (columns.length >= 4) {
@@ -121,19 +121,19 @@
                         const assignmentFile = columns[1].trim(); // Column B - Assignment File Upload
                         const assignmentLink = columns[2].trim(); // Column C - Assignment Link Upload
                         const assignmentName = columns[3].trim(); // Column D - Assignment Name
-    
+
                         const formattedDate = new Date(timestamp).toLocaleDateString('en-US'); // Format timestamp as mm/dd/yyyy
-    
+
                         let assignmentElement;
-    
+
                         if (assignmentFile && !assignmentLink) {
                             // If there's a file and no link provided
-                            assignmentElement = $('<a>').attr('href', assignmentFile).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`);
+                            assignmentElement = $('<h1>').append($('<a>').attr('href', assignmentFile).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`));
                         } else if (!assignmentFile && assignmentLink) {
                             // If there's a link and no file provided
-                            assignmentElement = $('<a>').attr('href', assignmentLink).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`);
+                            assignmentElement = $('<h1>').append($('<a>').attr('href', assignmentLink).addClass('assignment-link').text(`${formattedDate} - ${assignmentName}`));
                         }
-    
+
                         if (assignmentElement) {
                             const listItem = $('<li>').append(assignmentElement);
                             assignmentsContainer.append(listItem);
@@ -142,8 +142,9 @@
                 }
             });
         }
-    
+
         updateAssignmentsFromSheet();
+
     </script>
     
 </body>
